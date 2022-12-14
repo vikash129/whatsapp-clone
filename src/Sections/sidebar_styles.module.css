@@ -1,0 +1,92 @@
+.sideBar{
+    background-color: var(--darker);
+    flex : 0.3;
+    flex-direction: column;
+    height: 90vh;
+    max-height: 90vh;
+    /* overflow-y: scroll; */
+    border-left: 1px solid var(--shadow);
+}
+
+.sideBar__header{
+    display: flex;
+   justify-content: space-between;
+   align-items: center;
+   height: 60px;
+   min-width: 10vw;
+   background-color:  var(--dark);
+   border-bottom: 0.6px solid var(--dark_alpha);
+   padding-left: 10px;
+}
+
+
+
+.sideBar__search{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    height: 50px;
+    background-color:var(--lighter);
+}
+
+.sideBar__searchContainer{
+    display: flex;
+    align-items: center;
+    background-color: var(--lighter);
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.sideBar__searchIcon{
+    color: grey;
+    margin: 0 15px;
+}
+
+.sideBar__searchInput{
+    outline-width: none;
+    background-color: var(--lighter);
+
+    outline: none;
+    border: none;
+    font-size: 16px;
+    font-family :'Times New Roman', Times, serif;
+}
+
+
+
+
+.sideBar__chats{
+    display: flex;
+    flex-direction: column;
+    background-color: inherit;
+}
+
+
+
+
+
+
+.sideBarChat{
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid rgba(134, 150, 160 , 0.15);
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.sideBarChat:hover{
+    background-color: var(--dark);
+}
+.sideBarChat__info{
+    margin-left: 15px;
+}
+
+.sideBarChat__info > p{
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+
+
