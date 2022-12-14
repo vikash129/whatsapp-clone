@@ -20,7 +20,7 @@ const pusher = new Pusher({
 // middlewares
 app.use(express.json());
 app.use(Cors())
-//or
+// or
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*")
     res.setHeader("Access-Control-Allow-Headers", "*")
@@ -59,17 +59,23 @@ db.once("open", () => {
 
                     const msgDetails = change.fullDocument;
 
-                    pusher.trigger("message", "inserted", {
-                        name: msgDetails.name,
-                        message: msgDetails.message,
-                        timeStamp : msgDetails.timeStamp ,
-                        received : msgDetails.received
-                    });
+                    try {
+                        pusher.trigger("message", "inserted", {
+                            name: msgDetails.name,
+                            message: msgDetails.message,
+                            timeStamp: msgDetails.timeStamp,
+                            received: msgDetails.received
+                        });
+                    }
+                     catch (e) {
+                        console.log('error at pushing ', e)
+                    }
+
                     break;
                 }
             default:
                 {
-                    console.log('error trigging pusher ' , change.operationType)
+                    console.log('error trigging pusher ', change.operationType)
                     console.log(change)
                 }
 
